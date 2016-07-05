@@ -9,6 +9,19 @@
 npm install @mohayonao/chord
 ```
 
+## Usage
+
+```js
+const chord = require("@mohayonao/chord");
+
+// list of defined chord
+console.log(Object.keys(chord));
+
+// get chord
+console.log(chord["major"]);
+// → [ 0, 4, 7 ]
+```
+
 ## License
 
 MIT
