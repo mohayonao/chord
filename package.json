@@ -7,7 +7,9 @@
     "url": "https://github.com/mohayonao/chord/issues"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^3.0.0"
+  },
   "engines": {
     "node": ">= 4.0.0"
   },
@@ -24,5 +26,12 @@
     "type": "git",
     "url": "https://github.com/mohayonao/chord.git"
   },
-  "scripts": {}
+  "scripts": {
+    "clean": "rm -rf npm-debug.log",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm-run-all clean test",
+    "preversion": "npm-run-all clean test",
+    "test": "eslint index.js",
+    "travis": "npm-run-all test"
+  }
 }
