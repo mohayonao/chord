@@ -29,9 +29,9 @@
   "scripts": {
     "clean": "rm -rf npm-debug.log",
     "postversion": "git push && git push --tags && npm run clean",
-    "prepublish": "npm-run-all clean test",
-    "preversion": "npm-run-all clean test",
+    "prepublish": "npm run clean && npm run test",
+    "preversion": "npm run clean && npm run test",
     "test": "eslint index.js",
-    "travis": "npm-run-all test"
+    "travis": "npm run test"
   }
 }
